@@ -42,7 +42,7 @@ number % 2 == 0
 
 //level 2
 let score
-// = parseFloat(prompt("Enter score:"))
+ = Number(prompt("Enter score:"))
 let mark = "F"
 if(score >= 80) mark = "A" 
 else if(score >= 70) mark = "B"
@@ -102,7 +102,7 @@ switch(day)
 
 //level 3
 month
-= prompt("Enter a month:").toLowerCase()
+// = prompt("Enter a month:").toLowerCase()
 let date = new Date(2100, 10, 10, 10, 10, 10, 10 )
 let year = date.getFullYear()
 switch(month)
