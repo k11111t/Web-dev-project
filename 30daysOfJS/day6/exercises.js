@@ -4,12 +4,17 @@ const countries = [
     'Canada',
     'Denmark',
     'Ethiopia',
-    'Finland',
+    'Oman',
+    'Laos',
     'Germany',
     'Hungary',
     'Ireland',
     'Japan',
-    'Kenya'
+    'Kenya',
+    'Finland',
+    'The UK',
+    'Saudi Arabia',
+    'The Republic of Kongo'
   ]
   
   const webTechs = [
@@ -310,16 +315,16 @@ console.log(countriesEndingWithIa.length > 0 ? countriesEndingWithIa : 'These ar
 
 //9
 max = countriesLengths[0]
-let maxIndex = 0
+let countryMaxIndex = 0
 for(let i=1; i<countriesLengths.length; i++)
 {
     if(max < countriesLengths[i])
     {
         max = countriesLengths[i]
-        maxIndex = i
+        countryMaxIndex = i
     }
 }
-console.log("country containing the biggest number of characters ", countries[maxIndex])
+console.log("country containing the biggest number of characters ", countries[countryMaxIndex])
 
 //10
 let fiveCharsCountries = []
@@ -334,7 +339,7 @@ console.log(fiveCharsCountries)
 
 //11
 max = webTechs[0].length
-maxIndex = 0
+let maxIndex = 0
 for(let i=1; i<webTechs.length; i++)
 {
     if(max < webTechs[i].length)
@@ -389,3 +394,70 @@ for(let fs of fullStack)
         console.log(webTech)
     }
 }
+
+//level 3
+
+//1
+let countriesCopy = []
+//this method avoid mutation of the original array
+countriesCopy = countries.join(",")
+countriesCopy = countriesCopy.split(",")
+console.log(countriesCopy)
+
+//2
+let sortedCountries = []
+//also avoids mutation of the original array
+countries.forEach(
+    (a) => sortedCountries.push(a)
+)
+sortedCountries = sortedCountries.sort()
+console.log("sorted:", sortedCountries)
+
+//3
+let sortedWebTechs = webTechs.join(",")
+sortedWebTechs = sortedWebTechs.split(",")
+sortedWebTechs = sortedWebTechs.sort()
+console.log(sortedWebTechs)
+
+let sortedMernStack = mernStack.join(",")
+sortedMernStack = sortedMernStack.split(",")
+sortedMernStack = sortedMernStack.sort()
+console.log(sortedMernStack)
+
+//4
+console.log(landCountries)
+
+//5
+console.log(countries[countryMaxIndex])
+
+//6 - same as 4
+
+//7
+let fourCharCountries = []
+countries.forEach(
+    (a) => {
+        if(a.length == 4)
+        {
+            fourCharCountries.push(a)
+        }
+    }
+)
+console.log(fourCharCountries)
+
+//8
+let twoWordCountries = []
+countries.forEach(
+    (a) => {
+        if(a.split(" ").length >= 2)
+        {
+            twoWordCountries.push(a)
+        }
+    }
+)
+console.log(twoWordCountries)
+
+//9
+let reverseCountries = []
+reverseCountries = countries.reverse()
+reverseCountries = reverseCountries.map( (a) => a.toUpperCase())
+console.log(reverseCountries)
