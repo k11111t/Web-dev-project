@@ -222,19 +222,108 @@ function signUp(username)
         }
     }
 
+    let dateObj = new Date();
+
+    let hours = dateObj.getUTCHours();
+    let minutes = dateObj.getUTCMinutes();
+    let day = dateObj.getUTCDate();
+    let month = dateObj.getUTCMonth() + 1; 
+    let year = dateObj.getUTCFullYear();
+
+    let date = day + "/" + month + "/" + year + " "  + (hours > 12  && hours != 0? Math.abs(hours - 12) : hours) + ":" + minutes + " " + (hours > 12 && hours != 0 ? "PM" : "AM");
+ 
     users.push({
         _id: username.concat(parseInt(Math.random()*100)),
         username: username,
         email: 'default@info.com',
         password: '1234',
-        createdAt: Date.now(),
+        createdAt: date,
         isLoggedIn: false
     })
     return "Success"
 }
 
-console.log(signUp("Kit"))
+function signIn(username)
+{
+    for(let i=0; i<users.length; i++)
+    {
+        if(users[i].username != username)
+        {
+            continue
+        }
+        let password = prompt("please enter password")
+        if(users[i].password != password)
+        {
+            return "Wrong password"
+        }
+        return "Logged in"
+    }
+
+    return "User not found"
+}
+
+let user = 'Kit'
+console.log(signUp(user))
 console.log(users)
-console.log(signUp("Kit"))
+console.log(signIn('Jack'))
 
 //3
+function rateProduct(productId, username, rating)
+{
+    let found = false
+    products.forEach(element => {
+        console.log(element["_id"])
+        if(element["_id"] == productId)
+        {
+            element.ratings.push({ 'userId': username, 'rate': rating })
+            found = true
+            return
+        }
+    })
+    return found ? "Added a review" : "Product not found"
+}
+
+function averageRating(productId)
+{
+    let average = -1 
+    products.forEach(element => {
+        if(element._id == productId)
+        {
+            let sum = 0
+            for(let i=0; i<element.ratings.length; i++)
+            {
+                sum += element.ratings[i].rate
+            }
+            average = sum/element.ratings.length
+        }
+    })
+
+    return (average == -1) ? "Product not found" : average
+}
+
+let productId = 'eedfcf'
+console.log(rateProduct(productId, user, 1.5))
+console.log(averageRating(productId))
+
+//4
+function likeProduct(productId, username)
+{
+    products.forEach(element => {
+        if(element._id == productId)
+        {
+            let usernameIndex = element.likes.indexOf(username)
+            let likes = element.likes
+            if(usernameIndex == -1)
+            {
+                likes.push(username)
+            }
+            else
+            {
+                likes = likes.slice(0, usernameIndex).concat(likes.slice(usernameIndex+1, likes.length))
+                element.likes = likes
+            }
+        }
+    })
+}
+likeProduct('aegfal', 'fg12cy')
+console.log(products)
