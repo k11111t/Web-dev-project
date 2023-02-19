@@ -1,4 +1,4 @@
-const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand', 'Estonia']
+const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand', 'Estonia', 'India', 'Indonesia', 'Vietnam', 'Phillipines', 'Taiwan', 'China']
 const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const products = [
@@ -116,3 +116,89 @@ const RussiaIndex = countries.findIndex(element => element == "Russia")
 console.log(RussiaIndex)
 
 //level 2
+
+//1
+const totalProductPrice = products.map(element => element.price).filter(element => !isNaN(parseFloat(element))).reduce((n_0, n_1) => n_0 + n_1)
+console.log(totalProductPrice)
+
+//2
+const sumOfProductPrices = products.reduce((sum, next, currentIndex) => {
+    let next_ = parseFloat(next.price)
+    if(currentIndex == 1)
+    {
+        let first_ = parseFloat(sum.price)
+        isNaN(first_) ? sum = 0 : sum = first_
+    }
+    if(!isNaN(next_))
+    {
+        return sum + next_      
+    }
+    else
+    {
+        return sum
+    }
+})
+console.log(sumOfProductPrices)
+
+//3
+function categorizeCountries(countries, commonFactor)
+{
+    return countries.filter(element => element.includes(commonFactor))
+}
+console.log(categorizeCountries(countries, 'a'))
+
+//4
+// this was hard wtf - used mr ChatGPT
+function numberOfStartingLettersInCountries(countries)
+{   
+    // return countries.map((element) => {
+    //     return element.charAt(0)
+    // }).map((element) => {
+    //     return ({[element] : 1})
+    // })
+    let objectCount = countries.map(element => 
+        element.charAt(0)
+        ).reduce((acc, char) => {
+            acc[char] = (acc[char] || 0) + 1;
+            return acc;
+        }, {})
+    
+    return  Object.entries(objectCount).map(([key, value]) => ({ [key] : value}))
+}
+console.log(numberOfStartingLettersInCountries(countries))
+
+//5
+function getFirstTenCountries(countries)
+{
+    return countries.filter((element, index, array) => {
+        return index < 10
+    })
+}
+console.log(getFirstTenCountries(countries))
+
+//6
+function getLastTenCountries(countries)
+{
+    return countries.filter((element, index, array) => {
+        return index < array.length && index > array.length-11
+    })
+}
+console.log(getLastTenCountries(countries))
+
+//7
+//disgusting code!
+function mostUsedStartLetter(countries)
+{
+    return Object.keys((numberOfStartingLettersInCountries(countries).sort((a, b) => {
+        if(Object.values(a)[0] > Object.values(b)[0])
+        {
+            return -1
+        }
+        if(Object.values(a)[0] < Object.values(b)[0])
+        {
+            return 1
+        }
+        return 0
+    })[0]))[0]
+}
+console.log(mostUsedStartLetter(countries))
