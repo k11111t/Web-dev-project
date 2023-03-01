@@ -1,141 +1,141 @@
-// //level 1
-// //1
-// let dog = {}
+//level 1
+//1
+let dog = {}
 
-// //2
-// console.log(dog)
+//2
+console.log(dog)
 
-// //3
-// dog['name'] = "Kaikai"
-// dog['legs'] = 4
-// dog['color'] = "red"
-// dog['age'] = 3
-// dog['bark'] = function(){
-//   return "woof woof"  
-// }
+//3
+dog['name'] = "Kaikai"
+dog['legs'] = 4
+dog['color'] = "red"
+dog['age'] = 3
+dog['bark'] = function(){
+  return "woof woof"  
+}
 
-// //4
-// console.log(dog.name)
-// console.log(dog.legs)
-// console.log(dog.color)
-// console.log(dog.age)
-// console.log(dog.bark())
+//4
+console.log(dog.name)
+console.log(dog.legs)
+console.log(dog.color)
+console.log(dog.age)
+console.log(dog.bark())
 
-// //5
-// dog['breed'] = "Chihuahua"
-// dog['getDogInfo'] = function(){
-//     // return [this.name, this.legs, this.color, this.color, this.age, this.breed]
-//     return Object.entries(this)
-// }
-// console.log(dog.getDogInfo())
+//5
+dog['breed'] = "Chihuahua"
+dog['getDogInfo'] = function(){
+    // return [this.name, this.legs, this.color, this.color, this.age, this.breed]
+    return Object.entries(this)
+}
+console.log(dog.getDogInfo())
 
-// //level 2
-// //1
-// let max = users[Object.keys(users)[0]].skills.length
-// let maxKey = Object.keys(users)[0]
-// Object.keys(users).forEach(element => {
-//     if(max < users[element].skills.length)
-//     {
-//         max = users[element].skills.length
-//         maxKey = element
-//     }    
-// });
-// console.log(maxKey)
+//level 2
+//1
+let max = users[Object.keys(users)[0]].skills.length
+let maxKey = Object.keys(users)[0]
+Object.keys(users).forEach(element => {
+    if(max < users[element].skills.length)
+    {
+        max = users[element].skills.length
+        maxKey = element
+    }    
+});
+console.log(maxKey)
 
-// //2
-// let loggedIn = 0
-// let greaterThan50 = 0
-// Object.keys(users).forEach(element => {
-//     if(users[element].isLoggedIn == true)
-//     {
-//         loggedIn++
-//     }
-//     if(users[element].points >= 50)
-//     {
-//         greaterThan50++
-//     }
-// });
-// console.log("logged in:", loggedIn)
-// console.log("greater than or equal to 50:", greaterThan50)
+//2
+let loggedIn = 0
+let greaterThan50 = 0
+Object.keys(users).forEach(element => {
+    if(users[element].isLoggedIn == true)
+    {
+        loggedIn++
+    }
+    if(users[element].points >= 50)
+    {
+        greaterThan50++
+    }
+});
+console.log("logged in:", loggedIn)
+console.log("greater than or equal to 50:", greaterThan50)
 
-// //3
-// let MERNdevelopers = []
-// Object.keys(users).forEach(element => {
-//     if(users[element].skills.includes('MongoDB', 'Express', 'React', 'Node'))
-//     {
-//         MERNdevelopers.push(element)
-//     }
-// });
-// console.log(MERNdevelopers)
+//3
+let MERNdevelopers = []
+Object.keys(users).forEach(element => {
+    if(users[element].skills.includes('MongoDB', 'Express', 'React', 'Node'))
+    {
+        MERNdevelopers.push(element)
+    }
+});
+console.log(MERNdevelopers)
 
-// //4
-// let copyUsers = Object.assign({}, users)
-// let meObject = {
-//         email: 'kit@kit.com',
-//         skills: ['HTML', 'CSS', 'JavaScript'],
-//         age: 23,
-//         isLoggedIn: false,
-//         points: 20
-// }
-// copyUsers['Kit'] = meObject
-// console.log(copyUsers)
+//4
+let copyUsers = Object.assign({}, users)
+let meObject = {
+        email: 'kit@kit.com',
+        skills: ['HTML', 'CSS', 'JavaScript'],
+        age: 23,
+        isLoggedIn: false,
+        points: 20
+}
+copyUsers['Kit'] = meObject
+console.log(copyUsers)
 
-// //5
-// console.log(Object.keys(copyUsers))
+//5
+console.log(Object.keys(copyUsers))
 
-// //6
-// console.log(Object.values(copyUsers))
+//6
+console.log(Object.values(copyUsers))
 
-// //7 - there is no counties object
+//7 - there is no counties object
 
-// //level 3
-// //1
-// let personalAccount = {
-//     firstName: "Joe",
-//     lastName: "Biden",
-//     incomes: {
-//         "Cloud services": 5000,
-//         "Eshop":500,
-//         "Selling power":200
-//     },
-//     expenses: {
-//         "Company events expenses": 100,
-//         "Manufacturing costs": 2000
-//     },
-//     totalIncome: function(){
-//         let sum = 0
-//         Object.keys(this.incomes).forEach( element => {
-//             sum += this.incomes[element]
-//         })
-//         return sum
-//     },
-//     totalExpense: function(){
-//         let sum = 0
-//         Object.keys(this.expenses).forEach( element => {
-//             sum += this.expenses[element]
-//         })
-//         return sum
-//     },
-//     accountInfo: function(){
-//         return `${this.firstName} ${this.lastName}; income: ${this.totalIncome()}; expenses: ${this.totalExpense()}`
-//     },
-//     addIncome: function(description, amount){
-//         if(this.income.hasOwnProperty(description)) return false
-//         this.income[description] = amount
-//         return true
-//     },
-//     addExpense: function(description, amount){
-//         if(this.expenses.hasOwnProperty(description)) return false
-//         this.expenses[description] = amount
-//         return true
-//     },
-//     accountBalance: function(){
-//         return this.totalIncome() - this.totalExpense()
-//     }
-// }
-// console.log(personalAccount.accountInfo())
-// console.log(personalAccount.addExpense("Electronics", 1000))
-// console.log(personalAccount.accountBalance())
+//level 3
+//1
+let personalAccount = {
+    firstName: "Joe",
+    lastName: "Biden",
+    incomes: {
+        "Cloud services": 5000,
+        "Eshop":500,
+        "Selling power":200
+    },
+    expenses: {
+        "Company events expenses": 100,
+        "Manufacturing costs": 2000
+    },
+    totalIncome: function(){
+        let sum = 0
+        Object.keys(this.incomes).forEach( element => {
+            sum += this.incomes[element]
+        })
+        return sum
+    },
+    totalExpense: function(){
+        let sum = 0
+        Object.keys(this.expenses).forEach( element => {
+            sum += this.expenses[element]
+        })
+        return sum
+    },
+    accountInfo: function(){
+        return `${this.firstName} ${this.lastName}; income: ${this.totalIncome()}; expenses: ${this.totalExpense()}`
+    },
+    addIncome: function(description, amount){
+        if(this.income.hasOwnProperty(description)) return false
+        this.income[description] = amount
+        return true
+    },
+    addExpense: function(description, amount){
+        if(this.expenses.hasOwnProperty(description)) return false
+        this.expenses[description] = amount
+        return true
+    },
+    accountBalance: function(){
+        return this.totalIncome() - this.totalExpense()
+    }
+}
+console.log(personalAccount.accountInfo())
+console.log(personalAccount.addExpense("Electronics", 1000))
+console.log(personalAccount.accountBalance())
 
 //2
 let users = [
