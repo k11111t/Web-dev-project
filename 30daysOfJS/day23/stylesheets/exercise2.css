@@ -1,0 +1,47 @@
+.body 
+{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.wrapper
+{
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textDiv
+{
+    font-size: 50px;
+    border-width: 1px;
+    padding: 20px;
+    width: 800px;
+    text-align: center;
+    border: 1px solid lightgrey;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.numberDiv
+{
+    font-size: 80px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid lightgrey;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.green
+{
+    color: green;
+}   

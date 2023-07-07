@@ -69,11 +69,11 @@ function showChallenges(divName)
         // styles for the challenge divs
         newDivMainChallenge.style.display = "flex"
         newDivMainChallenge.style.height = "30px"
-        newDivMainChallenge.style.justifyContent = "center"
-        newDivMainChallenge.style.alignItems = "center"
+        newDivMainChallenge.style.justifyContent = "space-evenly"
+        // newDivMainChallenge.style.alignItems = "center"
         newDivMainChallenge.style.padding = "25px"
         newDivMainChallenge.style.fontFamily = "Calibri"
-        newDivMainChallenge.style.fontSize = "15px"
+        newDivMainChallenge.style.fontSize = "20px"
         newDivMainChallenge.style.borderRadius = "5px"
 
         newDivChallengeName.style.flex = 1
