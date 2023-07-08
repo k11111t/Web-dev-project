@@ -1,0 +1,115 @@
+.body 
+{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  height: 100vh;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+}
+
+.heading2
+{
+    font-size: 50px;
+    margin: 0px;
+    color: rgb(223, 175, 73);
+}
+
+.subtitle
+{
+    font-size: 20px;
+}
+
+.wrapper
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.graph-buttons
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    
+}   
+
+.graph-button
+{
+    font-size: 15px;
+    background-color: rgb(223, 175, 73);
+    padding: 10px 20px 10px 20px;
+    margin: 15px 5px 0px 5px;
+    text-transform: uppercase;
+    border-style: none;
+}
+
+.graph-title
+{
+    font-weight: normal;
+    margin: 0px 0px 10px 0px;
+}
+
+.graphs
+{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.table
+{
+    width: 80%;
+}
+
+.column1 {
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+.column2
+{
+    width: 70%;
+}
+
+.progress-bar
+{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px 0px 0px 0px;
+  }
+  
+.progress {
+    height: 100%;
+    background-color: rgb(223, 175, 73);
+    width: 0;
+    /* transition: width 0.3s ease-in-out; */
+}
+
+.column3
+{
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
