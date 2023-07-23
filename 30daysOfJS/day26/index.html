@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>30DaysOfJavaScript:11 Day </title>
+</head>
+
+<body>
+	<div class="countries-list-main-div">
+		<h1>World countries list</h1>
+		<h2>Total number of countries: <span id="number-of-countries"></span></h2>
+		<p id="search info">Countries with <span id="search-string"></span> are <span id="num-of-results"></span></p>
+		
+		<!-- buttons div -->
+		<div class="buttons-div">
+			<div id="search-button-starting" class="search-option">Starting word</div>
+			<div id="search-button-any" class="search-option">Search with any word</div>
+			<div id="sort-order" class="sort-option"> &#8645;</div>
+		</div>
+
+		<!-- search bar div -->
+		<div id="input-div">
+			<input id="search-bar-input">
+			<i class="fas fa-search magnifying-glass-icon" style="color:white"></i>
+		</div>	
+	</div>
+	<div id="countries-grid-div" class="countries-grid-div">
+
+	</div>
+	
+
+	<script src="./data/countries.js"></script>
+	<script src="./scripts/main.js"></script>
+
+</body>
+
+</html>

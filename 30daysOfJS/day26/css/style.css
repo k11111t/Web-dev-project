@@ -1,0 +1,50 @@
+body
+{
+    font-family: sans-serif;
+}
+
+.countries-list-main-div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+h1
+{
+    font-size: 50px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+.buttons-div
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.search-option
+{
+    width: 200px;
+    height: 50px;
+    border-style: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    background-color: rgb(168, 101, 231);
+    margin: 2px;
+
+}
+
+.search-option.clicked
+{
+    background-color: blueviolet;
+}
+
+.countries-grid
+{
+    padding: 50px;
+}
+
