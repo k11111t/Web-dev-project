@@ -1,6 +1,10 @@
 body
 {
     font-family: sans-serif;
+    color: white;
+    background-color: beige;
+    margin: 0px;
+    padding: 0px;
 }
 
 .countries-list-main-div
@@ -10,14 +14,24 @@ body
     justify-content: center;
     align-items: center;
     height: 600px;
+
+    background-image: url("../images/globe-2.jpg");
+    background-size: cover;
+    background-position-y: 55%;
+    max-width: 100%;
 }
 
 h1
 {
     font-size: 50px;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
     text-transform: uppercase;
-    margin: 0px;
+    margin: 10px;
+}
+
+h2, h3
+{
+    margin: 10px;
 }
 
 .buttons-div
@@ -28,23 +42,129 @@ h1
 
 .search-option
 {
-    width: 200px;
+    width: 250px;
     height: 50px;
+
     border-style: none;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     background-color: rgb(168, 101, 231);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 2px;
 
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-.search-option.clicked
+.search-option.clicked, .sort-option.clicked
 {
     background-color: blueviolet;
 }
 
-.countries-grid
+.sort-option
 {
-    padding: 50px;
+    width: 50px;
+    height: 50px;
+
+    border-style: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    background-color: rgb(168, 101, 231);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+
+    font-weight: bold;
 }
 
+.input-div
+{
+    font-size: 30px;
+}
+
+.search-bar-input
+{
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 30px;
+    border-style: none;
+
+    font-size: 30px; 
+    color: black;
+    text-align: left;
+    width: 700px;
+
+    transition: box-shadow 0.3s;
+}
+
+.search-bar-input::placeholder
+{
+    color: lightslategray; /* Set the text color to grey */
+    text-align: center;
+}
+
+.search-bar-input:focus
+{
+    box-shadow: 0 0 5px aqua;
+    outline: none;
+}
+
+.countries-grid-div
+{
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+}
+
+.countries-holder
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+.country-div
+{
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+
+    background-image: url("../images/map_image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+
+    position: relative;
+}
+
+.country-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  }
+
+.country-div-content {
+    color: "white";
+    z-index: 1;
+    position: relative;
+}

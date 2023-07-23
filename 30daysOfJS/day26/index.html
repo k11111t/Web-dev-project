@@ -7,12 +7,14 @@
 	<title>30DaysOfJavaScript:11 Day </title>
 </head>
 
-<body>
+<body class="body">
 	<div class="countries-list-main-div">
+		
 		<h1>World countries list</h1>
 		<h2>Total number of countries: <span id="number-of-countries"></span></h2>
-		<p id="search info">Countries with <span id="search-string"></span> are <span id="num-of-results"></span></p>
-		
+
+		<h3 id="search-info"></h3>
+
 		<!-- buttons div -->
 		<div class="buttons-div">
 			<div id="search-button-starting" class="search-option">Starting word</div>
@@ -21,15 +23,14 @@
 		</div>
 
 		<!-- search bar div -->
-		<div id="input-div">
-			<input id="search-bar-input">
+		<div id="input-div" class="input-div">
+			<input type="text" id="search-bar-input" class="search-bar-input" placeholder="Search Country ...">
 			<i class="fas fa-search magnifying-glass-icon" style="color:white"></i>
 		</div>	
 	</div>
 	<div id="countries-grid-div" class="countries-grid-div">
 
-	</div>
-	
+	</div>	
 
 	<script src="./data/countries.js"></script>
 	<script src="./scripts/main.js"></script>

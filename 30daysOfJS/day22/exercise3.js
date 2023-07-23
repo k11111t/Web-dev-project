@@ -340,6 +340,7 @@ function showKeywords(divName)
     divKeywordTitle.innerHTML = "Keywords"
     divKeywordsMain.appendChild(divKeywordTitle)
 
+    const divCenterBubles = document.createElement("div") 
     const divKeywordsBubbles = document.createElement("div")
     for(let i=0; i<keywords.length; i++)
     {
@@ -353,22 +354,27 @@ function showKeywords(divName)
         keyWordBubble.innerHTML = "# " + keywords[i]
         divKeywordsBubbles.appendChild(keyWordBubble)
     }
-    divKeywordsMain.appendChild(divKeywordsBubbles)
+
+    divCenterBubles.appendChild(divKeywordsBubbles)
+    divKeywordsMain.appendChild(divCenterBubles)
 
     //styles
     setCenterDivStyle(divKeywordsMain)
     divKeywordsMain.style.display = "block"
     divKeywordsMain.style.margin = "30px 0px 30px 0px"
     divKeywordsMain.style.height = "auto"
+    divKeywordsMain.style.justifyContent = "center"
 
     divKeywordTitle.style.fontSize = "20px"
     divKeywordTitle.style.fontWeight = "bold"
+
+    setCenterDivStyle(divCenterBubles)
 
     setCenterDivStyle(divKeywordsBubbles)
     divKeywordsBubbles.style.display = "flex"
     divKeywordsBubbles.style.flexWrap = "wrap"
     divKeywordsBubbles.style.justifyContent = "space-evenly"
-    divKeywordsBubbles.style.width = "90%"
+    divKeywordsBubbles.style.width = "95%"
     divKeywordsBubbles.style.margin = "10px"
     Array.from(divKeywordsBubbles.children).forEach( e => 
         {
