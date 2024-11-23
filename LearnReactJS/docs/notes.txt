@@ -1,0 +1,71 @@
+props vs state
+
+props:
+    - get passed to the component
+    - declared as function parameters
+    - immutable
+    - accessed via props (function argument)
+
+state:
+    - managed within the component
+    - declared in the function body
+    - mutable - by children of the component and the component itself
+    - useState Hook to access the state
+
+
+HOOKS:
+    special function that lets us hook into React features
+    - *useState - allows us using state in our components
+    - useReducer - to manage more complex states
+    - *useEffect - for external systems (APIs)
+    - useContext - to use data passed through context
+    - *useRef - reference HTML
+    - useMemo - improve app performance
+    - useCallback - improve app performance
+    - *useTransition
+    - useDeferredValue
+
+    * - we will use these
+
+Event Handling
+    - triggered when use interacts with the application (e.g. mouse and key events)
+    - React events use camel case
+    - with JSX we pass the event function as the event handler, rather than a string
+
+Parent-Child communication
+    - the child component calls a function in a parent component - using props
+    - we pass the function in props of the child
+    - we use arrow functions to pass parameters from child component to the parent component
+        - the same function we call from the child, we use its parameter to pass it up to the parent
+
+Conditional rendering
+    - use the ternary operator:   condition ? result_true : result_false
+    - or use short circuit operator:   condition && result_true
+        - will return '' if the condition is false
+
+List rendering
+    - using the map operator
+    - we need to give them keys - essential for React to work with DOM components
+        - for sotring and filtering
+
+Styling components 
+    - css file
+        - applies css to the children too - may result in css conflicts
+    - inline Styling
+    - css modules - files names are: 'name.modules.css'
+        - classes are locally scoped - better for organising css
+    - css in js libraries - more advanced
+
+Forms
+    - use states to manage the value of the inputs
+    - onChange event updates the value of the internal state
+
+HTTP requests
+    - we use useEffect to fetch data
+        - used for making side effects in our components
+        - first argument is the effect
+        - second argument is dependency array - when to rerun the effect
+    - and useState to display the data
+
+useTransition
+    - concerned with performance rather than supporting a core functionality
